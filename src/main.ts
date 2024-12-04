@@ -57,7 +57,8 @@ export async function run(): Promise<void> {
         const newBranchSuffix = '-cherry-pick'
 
         const originalBranch = mergedPR.head.ref
-        const newBranchName = originalBranch + newBranchSuffix + "-" + targetBranch
+        const newBranchName =
+            originalBranch + newBranchSuffix + '-' + targetBranch
 
         const changedFilePaths = await getListOfChangedFilePaths(targetBranch)
 

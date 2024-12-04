@@ -30691,7 +30691,7 @@ async function run() {
         const shouldFastForwardSubmodules = submodulesTargetBranch !== '';
         const newBranchSuffix = '-cherry-pick';
         const originalBranch = mergedPR.head.ref;
-        const newBranchName = originalBranch + newBranchSuffix;
+        const newBranchName = originalBranch + newBranchSuffix + '-' + targetBranch;
         const changedFilePaths = await (0, diff_1.getListOfChangedFilePaths)(targetBranch);
         await (0, git_1.configureGitUser)(commitAuthorName, commitAuthorEmail);
         if (changedFilePaths.length === 0) {
